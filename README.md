@@ -1,1 +1,5 @@
-Description: This application takes user inp
+Description: This application takes user input an generates an SVG image.
+
+Walkthrough Video: 
+
+Github Link: 

@@ -1,8 +1,7 @@
 const inquirer = require('inquirer');
-const shapes = require('./lib/shapes')
-const circles = require('./lib/circles')
-const squares = require('./lib/squares')
-const triangles = require('./lib/triangles')
+const Circle = require('./lib/circles')
+const Square = require('./lib/squares')
+const Triangle = require('./lib/triangles')
 const { writeFile } = require('fs/promises');
 
 
@@ -36,11 +35,11 @@ inquirer.prompt(questions)
     let selectedShape;
 
     if(logoShape === 'Circle'){
-        selectedShape = new circles(shapeColor, logoText, textColor);
+        selectedShape = new Circle(shapeColor, logoText, textColor);
     } else if (logoShape === 'Square'){
-        selectedShape = new squares(shapeColor, logoText, textColor);
+        selectedShape = new Square(shapeColor, logoText, textColor);
     } else {
-        selectedShape = new triangles(shapeColor, logoText, textColor);
+        selectedShape = new Triangle(shapeColor, logoText, textColor);
     }
 return writeFile('logo.svg', selectedShape.render()).then(() => {
     console.log('Logo created!')
